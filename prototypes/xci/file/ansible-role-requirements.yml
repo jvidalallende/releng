@@ -197,3 +197,7 @@
   scm: git
   src: https://github.com/ceph/ansible-ceph-osd
   version: 7bc5a61ceb96e487b7a9fe9643f6dafa6492f2b5
+- name: opendaylight
+  scm: git
+  src: https://github.com/dfarrell07/ansible-opendaylight
+  version: master
