@@ -36,7 +36,7 @@ openstack_host_specific_kernel_modules:
 ### neutron specific config
 neutron_plugin_type: ml2.ovs
 
-neutron_ml2_drivers_type: "flat,vlan"
+neutron_ml2_drivers_type: "flat,vlan,vxlan"
 
 # Typically this would be defined by the os-neutron-install
 # playbook. The provider_networks library would parse the
@@ -52,6 +52,6 @@ neutron_ml2_drivers_type: "flat,vlan"
 # OpenStack-Ansible plays
 neutron_provider_networks:
   network_flat_networks: "*"
-  network_types: "vlan"
+  network_types: "vlan,vxlan"
   network_vlan_ranges: "physnet1:102:199"
   network_mappings: "physnet1:br-provider"
