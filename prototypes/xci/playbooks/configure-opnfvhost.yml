@@ -87,16 +87,9 @@
       command: "/bin/bash ./scripts/bootstrap-ansible.sh"
       args:
         chdir: "{{OPENSTACK_OSA_PATH}}"
-    - name: install python-crypto package
+    - name: install python Crypto module
       package:
-        name: python-crypto
-      when:
-        ansible_os_family in ["Debian", "RedHat"]
-    - name: install python-pycrypto package
-      package:
-        name: python-pycrypto
-      when:
-        ansible_os_family == "Suse"
+        name: {{ python_crypto_package_name }}
     - name: install PyYAML
       pip:
         name: pyyaml
