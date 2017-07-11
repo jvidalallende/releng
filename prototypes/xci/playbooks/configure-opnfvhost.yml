@@ -91,12 +91,12 @@
       package:
         name: python-crypto
       when:
-        ansible_os_family in ['Debian', 'RedHat']
+        ansible_os_family in == "Debian" or ansible_os_family == "RedHat"
     - name: install python-pycrypto package
       package:
         name: python-pycrypto
       when:
-        ansible_os_family == 'Suse'
+        ansible_os_family == "Suse"
     - name: install PyYAML
       pip:
         name: pyyaml
