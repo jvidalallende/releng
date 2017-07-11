@@ -87,6 +87,11 @@
       command: "/bin/bash ./scripts/bootstrap-ansible.sh"
       args:
         chdir: "{{OPENSTACK_OSA_PATH}}"
+    - name: install python-crypto
+      apt:
+        name: python-crypto
+        state: present
+    # pw-token-gen.py makes use of python's Crypto module. Ensure it is installed.
     - name: generate password token
       command: "python pw-token-gen.py --file {{OPENSTACK_OSA_ETC_PATH}}/user_secrets.yml"
       args:
