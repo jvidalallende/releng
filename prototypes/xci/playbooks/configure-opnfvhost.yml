@@ -89,7 +89,7 @@
         chdir: "{{OPENSTACK_OSA_PATH}}"
     - name: install python Crypto module
       package:
-        name: {{ python_crypto_package_name }}
+        name: "{{ python_crypto_package_name }}"
     - name: install PyYAML
       pip:
         name: pyyaml
