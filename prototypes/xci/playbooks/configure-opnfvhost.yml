@@ -91,7 +91,7 @@
       package:
         name: python-crypto
       when:
-        ansible_os_family in ['Ubuntu', 'RedHat']
+        ansible_os_family in ['Debian', 'RedHat']
     - name: install python-pycrypto package
       package:
         name: python-pycrypto
